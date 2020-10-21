@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">videoCallConference</string>
+    <string name="welcome_to">Welcome to</string>
+    <string name="welcome_to_video_calling_app">Welcome to video calling app</string>
+    <string name="sign_in_to_your_account">Sign in to your account</string>
+    <string name="email">Email</string>
+    <string name="youeaxample_com">youeaxample.com</string>
+    <string name="password">Password</string>
+    <string name="u2022_u2022_u2022_u2022_u2022_u2022_u2022_u2022">• • • • • • • •</string>
+    <string name="video">Video</string>
+    <string name="please_fill_all_information_to_get_your_account_reaady">Please fill all information to get your account reaady</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last name</string>
+    <string name="rahman">Rahman</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="sign_in">Sign In</string>
+</resources>

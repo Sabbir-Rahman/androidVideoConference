@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "305444296402",
+    "firebase_url": "https://video-meeting-4a603.firebaseio.com",
+    "project_id": "video-meeting-4a603",
+    "storage_bucket": "video-meeting-4a603.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:305444296402:android:521840db45624047c2bf0b",
+        "android_client_info": {
+          "package_name": "com.example.videocallconference"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "305444296402-f56hiqga21n5cftj65n68318nd17fe42.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADrSLpzVn9t8bccHt5mhQg4XXyVrUq4Zk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "305444296402-f56hiqga21n5cftj65n68318nd17fe42.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
