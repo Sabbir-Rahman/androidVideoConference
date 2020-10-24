@@ -7,23 +7,31 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.videocallconference.Models.User;
 import com.example.videocallconference.R;
 import com.example.videocallconference.listeners.UsersListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class usersAdapter extends RecyclerView.Adapter<usersAdapter.UserViewHolder> {
 
     private List<User> users;
     private UsersListener usersListener;
+    private List<User> selectedUsers;
 
     public usersAdapter(List<User> users, UsersListener usersListener)
     {
         this.users = users;
         this.usersListener = usersListener;
+        selectedUsers = new ArrayList<>();
+    }
+
+    public List<User> getSelectedUsers(){
+        return selectedUsers;
     }
 
     @NonNull
@@ -53,6 +61,8 @@ public class usersAdapter extends RecyclerView.Adapter<usersAdapter.UserViewHold
 
         TextView textFirstChar, textUserName, textEmail;
         ImageView imageAudioMeeting,imageVideoMeeting;
+        ConstraintLayout userContainer;
+        ImageView imageSelected;
 
         public UserViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -62,6 +72,8 @@ public class usersAdapter extends RecyclerView.Adapter<usersAdapter.UserViewHold
             textEmail = itemView.findViewById(R.id.viewTextEmail);
             imageAudioMeeting = itemView.findViewById(R.id.imageAudioMeeting);
             imageVideoMeeting = itemView.findViewById(R.id.imageVideoMeeting);
+            userContainer = itemView.findViewById(R.id.userContainer);
+            imageSelected = itemView.findViewById(R.id.imageSeleceted);
         }
 
         void setUserData(User user){
@@ -78,6 +90,45 @@ public class usersAdapter extends RecyclerView.Adapter<usersAdapter.UserViewHold
                 @Override
                 public void onClick(View v) {
                     usersListener.initiateVideoMeeting(user);
+                }
+            });
+            userContainer.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+
+                    if(imageSelected.getVisibility() != View.VISIBLE)
+                    {
+                        selectedUsers.add(user);
+                        imageSelected.setVisibility(View.VISIBLE);
+                        imageVideoMeeting.setVisibility(View.GONE);
+                        imageAudioMeeting.setVisibility(View.GONE);
+                        usersListener.onMultipleUsersAction(true);
+                    }
+
+                    return true;
+                }
+            });
+
+            userContainer.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(imageSelected.getVisibility() == View.VISIBLE) {
+                        selectedUsers.remove(user);
+                        imageSelected.setVisibility(View.GONE);
+                        imageVideoMeeting.setVisibility(View.VISIBLE);
+                        imageAudioMeeting.setVisibility(View.VISIBLE);
+                        if(selectedUsers.size() == 0){
+                            usersListener.onMultipleUsersAction(false);
+                        } else {
+                            if(selectedUsers.size()>0)
+                            {
+                                selectedUsers.add(user);
+                                imageSelected.setVisibility(View.VISIBLE);
+                                imageVideoMeeting.setVisibility(View.GONE);
+                                imageAudioMeeting.setVisibility(View.GONE);
+                            }
+                        }
+                    }
                 }
             });
         }

@@ -8,6 +8,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,6 +30,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.InstanceIdResult;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -42,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements UsersListener {
     private usersAdapter adapter;
     private TextView textErrorMessage;
     private SwipeRefreshLayout swipeRefreshLayout;
+    private ImageView imageConference;
 
 
     @Override
@@ -51,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements UsersListener {
 
         preferenceManager = new PreferenceManager(getApplicationContext());
         signOutText = findViewById(R.id.textSignOut);
+        imageConference = findViewById(R.id.imageConference);
 
         signOutText.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -193,7 +197,29 @@ public class MainActivity extends AppCompatActivity implements UsersListener {
         if(user.token == null || user.token.trim().isEmpty()){
             Toast.makeText(this, user.firstName+" "+user.lastName+" is not available for meeting", Toast.LENGTH_SHORT).show();
         }else {
-            Toast.makeText(this, "Audio meeting with "+user.firstName+" "+user.lastName, Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getApplicationContext(),OutgoingInvitationActivity.class);
+            intent.putExtra("user", user);
+            intent.putExtra("type","audio");
+            startActivity(intent);
+        }
+    }
+
+    @Override
+    public void onMultipleUsersAction(Boolean isMultipleUserSelected) {
+        if(isMultipleUserSelected){
+            imageConference.setVisibility(View.VISIBLE);
+            imageConference.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent  = new Intent(getApplicationContext(), OutgoingInvitationActivity.class);
+                    intent.putExtra("selectedUsers",new Gson().toJson(adapter.getSelectedUsers()));
+                    intent.putExtra("type","video");
+                    intent.putExtra("isMultiple", true);
+                    startActivity(intent);
+                }
+            });
+        }else {
+            imageConference.setVisibility(View.GONE);
         }
     }
 }

@@ -10,7 +10,7 @@
         android:id="@+id/layoutHeader"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
-        android:background="@color/blue"
+        android:background="@color/dark_green"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingStart="@dimen/_8sdp"
@@ -108,7 +108,7 @@
                         android:importantForAutofill="no"
                         android:inputType="text"
                         android:includeFontPadding="false"
-                        android:textColor="@color/royal_blue"
+                        android:textColor="@color/green"
                         android:textSize="@dimen/_13ssp"
                         />
 
@@ -139,7 +139,7 @@
                         android:importantForAutofill="no"
                         android:inputType="text"
                         android:includeFontPadding="false"
-                        android:textColor="@color/royal_blue"
+                        android:textColor="@color/green"
                         android:textSize="@dimen/_13ssp"
                         />
 
@@ -170,7 +170,7 @@
                         android:importantForAutofill="no"
                         android:inputType="textEmailAddress"
                         android:includeFontPadding="false"
-                        android:textColor="@color/royal_blue"
+                        android:textColor="@color/green"
                         android:textSize="@dimen/_13ssp"
                         />
 
@@ -201,7 +201,7 @@
                         android:importantForAutofill="no"
                         android:inputType="textPassword"
                         android:includeFontPadding="false"
-                        android:textColor="@color/royal_blue"
+                        android:textColor="@color/green"
                         android:textSize="@dimen/_13ssp"
                         />
 
@@ -232,7 +232,7 @@
                         android:importantForAutofill="no"
                         android:inputType="textPassword"
                         android:includeFontPadding="false"
-                        android:textColor="@color/royal_blue"
+                        android:textColor="@color/green"
                         android:textSize="@dimen/_13ssp"
                         />
 
@@ -301,7 +301,7 @@
                 android:padding="@dimen/_6sdp"
                 android:text="@string/sign_in"
                 android:textAllCaps="true"
-                android:textColor="@color/orange"
+                android:textColor="@color/dark_green"
                 android:textSize="@dimen/_15ssp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textNoAccount"

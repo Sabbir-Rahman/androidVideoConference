@@ -2,6 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:id="@+id/userContainer"
+    android:animateLayoutChanges="true"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="@dimen/_5sdp"
     >
@@ -22,6 +24,21 @@
         app:layout_constraintBottom_toTopOf="@id/viewDevider"
         />
 
+    <ImageView
+        android:id="@+id/imageSeleceted"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/background_user_icon"
+        android:contentDescription="@string/app_name"
+        android:padding="@dimen/_3sdp"
+        android:src="@drawable/ic_accept"
+        app:layout_constraintBottom_toBottomOf="@id/textFistChar"
+        app:layout_constraintEnd_toEndOf="@id/textFistChar"
+        app:layout_constraintStart_toStartOf="@id/textFistChar"
+        app:layout_constraintTop_toTopOf="@id/textFistChar"
+        android:visibility="gone"
+        app:tint="@color/white" />
+
     <View
         android:id="@+id/viewSupporter"
         android:layout_width="1dp"
@@ -38,7 +55,7 @@
         android:contentDescription="Video"
         android:padding="@dimen/_2sdp"
         android:src="@drawable/ic_vide"
-        app:tint="@color/blue"
+        app:tint="@color/forest_green"
         app:layout_constraintBottom_toTopOf="@id/viewDevider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -52,7 +69,7 @@
         android:contentDescription="Audio"
         android:padding="@dimen/_4sdp"
         android:src="@drawable/ic_audio"
-        app:tint="@color/blue"
+        app:tint="@color/forest_green"
         app:layout_constraintBottom_toTopOf="@id/viewDevider"
         app:layout_constraintEnd_toStartOf="@id/imageVideoMeeting"
         app:layout_constraintTop_toTopOf="parent"

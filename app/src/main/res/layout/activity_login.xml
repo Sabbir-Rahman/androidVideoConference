@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/_150sdp"
             android:gravity="center"
-            android:background="@color/royal_blue"
+            android:background="@color/green"
             android:orientation="vertical"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -50,7 +50,7 @@
             android:fontFamily="@font/ubuntu_regular"
             android:includeFontPadding="false"
             android:text="@string/sign_in_to_your_account"
-            android:textColor="@color/blue_violet"
+            android:textColor="@color/green"
             android:textSize="@dimen/_15ssp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -102,7 +102,7 @@
                     android:importantForAutofill="no"
                     android:inputType="textEmailAddress"
                     android:includeFontPadding="false"
-                    android:textColor="@color/royal_blue"
+                    android:textColor="@color/green"
                     android:textSize="@dimen/_13ssp"
                     />
 
@@ -133,7 +133,7 @@
                     android:importantForAutofill="no"
                     android:inputType="textPassword"
                     android:includeFontPadding="false"
-                    android:textColor="@color/royal_blue"
+                    android:textColor="@color/green"
                     android:textSize="@dimen/_13ssp"
                     />
 
@@ -156,6 +156,7 @@
             android:fontFamily="@font/ubuntu_bold"
             android:includeFontPadding="false"
             android:text="Sign In"
+            android:background="@color/dark_green"
             android:textColor="@color/white"
             android:textSize="@dimen/_13ssp"
             app:layout_constraintTop_toBottomOf="@id/cardSignIn"
@@ -200,7 +201,7 @@
             android:padding="@dimen/_6sdp"
             android:text="Sign Up"
             android:textAllCaps="true"
-            android:textColor="@color/orange"
+            android:textColor="@color/dark_green"
             android:textSize="@dimen/_15ssp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textNoAccount"
